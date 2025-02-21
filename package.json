@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "dotenv": "^16.4.7",
+    "kysely": "^0.27.5",
+    "openai": "^4.85.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.2.7"
+  },
+  "scripts": {
+    "tauri": "tauri"
+  }
+}

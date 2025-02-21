@@ -1,0 +1,51 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "Feed",
+    "description": "Schema for a feed containing multiple posts",
+    "properties": {
+      "type": { "const": "app.chaoticharmonylabs.feed" },
+      "feedId": {
+        "type": "string",
+        "description": "Unique identifier for the feed"
+      },
+      "title": {
+        "type": "string",
+        "description": "Title of the feed, e.g., 'Friends Lens'"
+      },
+      "posts": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/post"
+        },
+        "description": "Array of posts included in the feed"
+      },
+      "createdAt": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Timestamp when the feed was created"
+      }
+    },
+    "required": ["type", "feedId", "title", "posts", "createdAt"],
+    "definitions": {
+      "post": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "type": ["object"],
+        "oneOf": [
+          { "$ref": "#/definitions/textPost" },
+          { "$ref": "#/definitions/imagePost" }
+        ]
+      },
+      // Reference to text post schema
+      "textPost": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "$ref": "/app.chaoticharmonylabs.textPost"
+      },
+      // Reference to image post schema
+      "imagePost": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "$ref": "/app.chaoticharmonylabs.imagePost"
+      }
+    }
+  }
+  

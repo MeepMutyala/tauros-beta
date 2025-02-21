@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "Image Post",
+    "description": "Schema for an image-based post",
+    "properties": {
+      "type": { "const": "app.chaoticharmonylabs.imagePost" },
+      "imageUrl": { 
+        "type": "string", 
+        "format": "uri",
+        "description": "URL of the image" 
+      },
+      "caption": { 
+        "type": ["string", null], 
+        "maxLength": 280,
+        "description": "Caption for the image" 
+      },
+      "createdAt": { 
+        "type": ["string"], 
+        "format": "date-time",
+        "description": "TimeStamp"
+      }
+    }
+}
+  

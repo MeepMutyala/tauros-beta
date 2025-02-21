@@ -3,8 +3,17 @@ node_modules/
 next-mvp/node_modules/
 tauros-app/node_modules/
 
+# Next.js
+next-mvp/.next/
+tauros-app/.next/
+out/
+next-env.d.ts
+
+#tauri
+tauros-app/src-tauri/
+
 # Ignore environment files
-.env
+.env*
 
 # Ignore log files
 *.log
